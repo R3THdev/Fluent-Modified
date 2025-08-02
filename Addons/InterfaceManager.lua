@@ -1,7 +1,7 @@
 local HttpService = game:GetService("HttpService")
 
 local InterfaceManager = {} do
-	InterfaceManager.Folder = "R3TH PRIV"
+	InterfaceManager.Folder = "FluentSettings"
     InterfaceManager.Settings = {
         Theme = "Darker",
         Acrylic = false,
