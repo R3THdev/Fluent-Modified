@@ -1,5 +1,5 @@
 local HttpService = game:GetService("HttpService")
-
+.
 local InterfaceManager = {} do
 	InterfaceManager.Folder = "FluentSettings"
     InterfaceManager.Settings = {
