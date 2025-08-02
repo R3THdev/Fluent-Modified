@@ -182,7 +182,7 @@ local SaveManager = {} do
 
             if not success then
                 return self.Library:Notify({
-                    Title = "R3TH PRIV",
+                    Title = "Save Manager",
                     Content = "",
                     SubContent = "Failed to load the autoload configuration: " .. err,
                     Duration = 7
@@ -190,7 +190,7 @@ local SaveManager = {} do
             end
 
             self.Library:Notify({
-                Title = "R3TH PRIV",
+                Title = "Save Manager",
                 Content = "",
                 SubContent = string.format("Successfully auto-loaded: %q", name),
                 Duration = 7
@@ -225,7 +225,7 @@ local SaveManager = {} do
 
                 local function notify(msg)
                     self.Library:Notify({
-                        Title = "R3TH PRIV",
+                        Title = "Save Manager",
                         Content = "",
                         SubContent = msg,
                         Duration = 7
@@ -299,7 +299,7 @@ local SaveManager = {} do
                 AutoloadButton:SetDesc("Current Config: " .. name)
 
                 self.Library:Notify({
-                    Title = "R3TH PRIV",
+                    Title = "Save Manager",
                     Content = "",
                     SubContent = string.format("Set %q to automatically load.", name),
                     Duration = 7
