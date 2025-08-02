@@ -2,14 +2,12 @@
 <img src="Assets/logolight.png#gh-light-mode-only" alt="fluent">
 
 ## ⚡ Features
-
 - Modern design
 - Many customization options
 - Almost any UI Element you would ever need 
 <br/>
 
 ## 🔌 Installation
-
 You can load Fluent through a GitHub Release:
 
 ```lua
@@ -17,13 +15,10 @@ local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/R3THde
 ```
 <br/>
 
-## 📜 Usage
-
-[Example Script](https://github.com/R3THdev/Fluent-Modified/blob/main/Example.lua)
-<br/>
+## 📜 Documentation
+https://r3thdev.gitbook.io/fluent/
 
 ## Credits
-
 - [dawid-scripts/Fluent](https://github.com/dawid-scripts/Fluent) - Fluent creator
 - [richie0866/remote-spy](https://github.com/richie0866/remote-spy) - Assets for the UI, some of the code
 - [violin-suzutsuki/LinoriaLib](https://github.com/violin-suzutsuki/LinoriaLib) - Code for most of the elements, save manager
