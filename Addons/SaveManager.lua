@@ -289,8 +289,9 @@ local SaveManager = {} do
                 end
             end
         })
-
-        local AutoloadButton = section:AddButton({
+        
+        local AutoloadButton
+        AutoloadButton = section:AddButton({
             Title = "Auto Load the selected config.",
             Description = "Current Config: None",
             Callback = function()
