@@ -8,7 +8,7 @@
 <br/>
 
 ## 🔌 Installation
-You can load Fluent through a GitHub Release:
+You can load Fluent through a GitHub Loadstring:
 
 ```lua
 local Fluent = loadstring(game:HttpGet("https://raw.githubusercontent.com/R3THdev/Fluent-Modified/main/Fluent.lua"))()
