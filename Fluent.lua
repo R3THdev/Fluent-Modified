@@ -5,7 +5,7 @@
     Maintained By: R3THdev
     GitHub: https://github.com/dawid-scripts/Fluent
 --]]
-print("v3")
+
 local a, b = {
     {
         1,
@@ -2892,6 +2892,7 @@ local aa = {
                     local buttonFrame = existing[valueName]
                     local J = {}
                     local N
+                    local motors
             
                     if not buttonFrame then
                         local K = e(
@@ -2939,12 +2940,6 @@ local aa = {
             
                         existing[valueName] = buttonFrame
             
-                        if j.Multi then
-                            N = l.Value[valueName]
-                        else
-                            N = l.Value == valueName
-                        end
-            
                         local _, P = c.SpringMotor(1, buttonFrame, "BackgroundTransparency")
                         local _, R = c.SpringMotor(1, K, "BackgroundTransparency")
                         local S = d.SingleMotor.new(6)
@@ -2952,7 +2947,9 @@ local aa = {
                             K.Size = UDim2.new(0, 4, 0, T)
                         end)
             
-                        buttonFrame._Motors = {P = P, R = R, S = S, AccentBar = K}
+                        motors = {P = P, R = R, S = S}
+            
+                        buttonFrame._Motors = motors
             
                         c.AddSignal(buttonFrame.MouseEnter, function()
                             P(N and 0.85 or 0.89)
@@ -2982,7 +2979,6 @@ local aa = {
                                         W:UpdateButton()
                                     end
                                 end
-            
                                 J:UpdateButton()
                                 l:Display()
                                 k:SafeCallback(l.Callback, l.Value)
@@ -2990,18 +2986,13 @@ local aa = {
                             end
                         end)
                     else
-                        local motors = buttonFrame._Motors
-                        if j.Multi then
-                            N = l.Value[valueName]
-                        else
-                            N = l.Value == valueName
-                        end
+                        motors = buttonFrame._Motors
+                    end
             
-                        if motors then
-                            P = motors.P
-                            R = motors.R
-                            S = motors.S
-                        end
+                    if j.Multi then
+                        N = l.Value[valueName]
+                    else
+                        N = l.Value == valueName
                     end
             
                     function J.UpdateButton()
@@ -3010,15 +3001,16 @@ local aa = {
                         else
                             N = l.Value == valueName
                         end
-                        if buttonFrame._Motors then
-                            buttonFrame._Motors.P(N and 0.89 or 1)
-                            buttonFrame._Motors.S:setGoal(d.Spring.new(N and 14 or 6, {frequency = 6}))
-                            buttonFrame._Motors.R(N and 0 or 1)
+                        if motors then
+                            motors.P(N and 0.89 or 1)
+                            motors.S:setGoal(d.Spring.new(N and 14 or 6, {frequency = 6}))
+                            motors.R(N and 0 or 1)
                         end
                     end
             
                     J:UpdateButton()
                     l:Display()
+            
                     D[buttonFrame] = J
             
                     if buttonFrame:FindFirstChild("ButtonLabel") then
