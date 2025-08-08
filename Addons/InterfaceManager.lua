@@ -1,6 +1,8 @@
 local HttpService = game:GetService("HttpService")
 
 local InterfaceManager = {} do
+    InterfaceManager.Folder = "FluentSettings"
+    
     function InterfaceManager:SetFolder(folder)
         self.Folder = folder
         self:BuildFolderTree()
