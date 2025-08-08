@@ -1,7 +1,7 @@
 local HttpService = game:GetService("HttpService")
 
 local SaveManager = {} do
-	SaveManager.Folder = "R3TH PRIV"
+	SaveManager.Folder = "FluentSettings"
 	SaveManager.Ignore = {}
 	SaveManager.Parser = {
 		Toggle = {
