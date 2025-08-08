@@ -1,8 +1,6 @@
 local HttpService = game:GetService("HttpService")
 
 local SaveManager = {} do
-    SaveManager.Folder = "FluentSettings"
-    SaveManager.Ignore = {}
     SaveManager.Parser = {
         Toggle = {
             Save = function(idx, object) 
