@@ -2892,7 +2892,6 @@ local aa = {
                     local buttonFrame = existing[valueName]
                     local J = {}
                     local N
-                    local motors
             
                     if not buttonFrame then
                         local K = e(
@@ -2940,16 +2939,18 @@ local aa = {
             
                         existing[valueName] = buttonFrame
             
+                        if j.Multi then
+                            N = l.Value[valueName]
+                        else
+                            N = l.Value == valueName
+                        end
+            
                         local _, P = c.SpringMotor(1, buttonFrame, "BackgroundTransparency")
                         local _, R = c.SpringMotor(1, K, "BackgroundTransparency")
                         local S = d.SingleMotor.new(6)
                         S:onStep(function(T)
                             K.Size = UDim2.new(0, 4, 0, T)
                         end)
-            
-                        motors = {P = P, R = R, S = S}
-            
-                        buttonFrame._Motors = motors
             
                         c.AddSignal(buttonFrame.MouseEnter, function()
                             P(N and 0.85 or 0.89)
@@ -2979,32 +2980,41 @@ local aa = {
                                         W:UpdateButton()
                                     end
                                 end
+            
                                 J:UpdateButton()
                                 l:Display()
                                 k:SafeCallback(l.Callback, l.Value)
                                 k:SafeCallback(l.Changed, l.Value)
                             end
                         end)
-                    else
-                        motors = buttonFrame._Motors
-                    end
             
-                    if j.Multi then
-                        N = l.Value[valueName]
-                    else
-                        N = l.Value == valueName
-                    end
+                        function J.UpdateButton()
+                            if j.Multi then
+                                N = l.Value[valueName]
+                                if N then
+                                    P(0.89)
+                                end
+                            else
+                                N = l.Value == valueName
+                                P(N and 0.89 or 1)
+                            end
+                            S:setGoal(d.Spring.new(N and 14 or 6, {frequency = 6}))
+                            R(N and 0 or 1)
+                        end
             
-                    function J.UpdateButton()
+                    else
                         if j.Multi then
                             N = l.Value[valueName]
                         else
                             N = l.Value == valueName
                         end
-                        if motors then
-                            motors.P(N and 0.89 or 1)
-                            motors.S:setGoal(d.Spring.new(N and 14 or 6, {frequency = 6}))
-                            motors.R(N and 0 or 1)
+            
+                        function J.UpdateButton()
+                            if j.Multi then
+                                N = l.Value[valueName]
+                            else
+                                N = l.Value == valueName
+                            end
                         end
                     end
             
