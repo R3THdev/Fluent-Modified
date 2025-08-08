@@ -1,14 +1,6 @@
 local HttpService = game:GetService("HttpService")
 
 local InterfaceManager = {} do
-    InterfaceManager.Folder = "FluentSettings"
-    InterfaceManager.Settings = {
-        Theme = "Darker",
-        Acrylic = false,
-        Transparency = false,
-        MenuKeybind = "LeftControl"
-    }
-
     function InterfaceManager:SetFolder(folder)
         self.Folder = folder
         self:BuildFolderTree()
