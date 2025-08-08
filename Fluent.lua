@@ -121,7 +121,7 @@ local aa = {
         v(w)
         t:Init(w)
         local x = {
-            Version = "1.1.0",
+            Version = "1.2.1",
             OpenFrames = {},
             Options = {},
             Themes = e(o.Themes).Names,
